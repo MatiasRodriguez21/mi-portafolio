@@ -1,13 +1,127 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Definición de variables CSS */
+:root {
+  --dark-slate-gray: #384d48ff;
+  --dim-gray: #6e7271ff;
+  --sage: #acad94ff;
+  --timberwolf: #d8d4d5ff;
+  --platinum: #e2e2e2ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Estilos generales */
+body {
+  background-color: var(--platinum); /* Color de fondo más claro */
+  color: var(--dark-slate-gray); /* Color de texto más oscuro */
+}
+
+body h2 {
+  margin-bottom: 20px; /* Espaciado inferior para encabezados */
+  color: var(--dark-slate-gray); /* Color de encabezados */
+}
+
+/* Estilos para la barra de navegación */
+body .custom-navbar {
+  background-color: var(--dark-slate-gray); /* Color de fondo de la barra de navegación */
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente */
+}
+
+body .custom-title {
+  color: var(--platinum); /* Color del título */
+  font-weight: bold; /* Texto más grueso */
+}
+
+body .navbar .nav-link {
+  color: var(--platinum); /* Color de los enlaces */
+  display: flex; /* Asegura que el ícono esté centrado */
+  align-items: center; /* Centra verticalmente el ícono */
+}
+
+body .navbar .nav-link:hover {
+  color: var(--sage); /* Color de los enlaces al pasar el mouse */
+}
+
+body .navbar-nav {
+  margin-right: auto; /* Empuja los elementos de navegación a la izquierda */
+}
+
+/* Estilos para el logo de GitHub */
+body .github-icon {
+  width: 40px; /* Ajusta el tamaño del ícono según sea necesario */
+  height: 40px; /* Ajusta el tamaño del ícono según sea necesario */
+}
+
+/* Efecto hover opcional para el ícono de GitHub */
+body .github-icon:hover {
+  background-color: #e2e6ea; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para tarjetas */
+body .card, body .skill-card {
+  border: none; /* Sin borde en las tarjetas */
+  background-color: var(--timberwolf); /* Color de fondo de las tarjetas */
+  transition: transform 0.2s; /* Efecto de hover */
+}
+
+body .card:hover, body .skill-card:hover {
+  transform: scale(1.05); /* Aumentar tamaño al pasar el mouse */
+}
+
+body .skill-card {
+  border: 1px solid #ddd; /* Borde ligero */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  display: flex; /* Usar flexbox para alinear elementos */
+  flex-direction: column; /* Alinear elementos en columna */
+  align-items: center; /* Centrar elementos horizontalmente */
+}
+
+/* Estilos para botones */
+body .button {
+  background-color: var(--sage); /* Color de botón primario */
+  border: none; /* Sin borde */
+  color: #384d48ff; /* Color del texto del botón */
+}
+
+body .btn-primary {
+  background-color: var(--sage); /* Color de botón primario */
+  border: none; /* Sin borde */
+  color: #384d48ff; /* Color del texto del botón */
+}
+
+body .btn-primary:hover {
+  background-color: var(--dim-gray); /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para íconos de tecnología */
+body .tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+body .tech-icon {
+  width: 24px; /* Ajusta el tamaño según sea necesario */
+  height: 24px;
+  margin-right: 5px; /* Espaciado entre íconos */
+}
+
+/* Estilos para logos de habilidades */
+body .skill-logo {
+  width: 50px; /* Ajusta el tamaño del logo */
+  height: 50px; /* Ajusta el tamaño del logo */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilos para íconos de habilidades */
+body .skill-icon {
+  font-size: 50px; /* Ajusta el tamaño del ícono (aumenta el valor) */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+
+.contenedor-contact{
+   background-color:var(--timberwolf);
+   padding:20px ;
+  border-radius: "8px";
 }
