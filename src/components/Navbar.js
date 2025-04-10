@@ -44,7 +44,7 @@ const Navbar = () => {
 
           {/* Enlace a GitHub alineado a la derecha */}
           <a 
-            href="https://github.com/tu-usuario" 
+            href="https://github.com/MatiasRodriguez21" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="nav-link"
