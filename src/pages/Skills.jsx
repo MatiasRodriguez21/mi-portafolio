@@ -17,11 +17,11 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="container my-5">
+    <section id="skills" className="container my-5 fade-in">
       <h2 className="text-center">Habilidades</h2>
       <div className="row">
         {skillsData.map((skill, index) => (
-          <div className="col-md-4 mb-4" key={index}>
+          <div className="col-md-4 mb-4 scale-on-hover" key={index}>
             <div className="skill-card text-center">
               <Icon icon={skill.icon} className="skill-icon" />
               <h5>{skill.name}</h5>
@@ -32,5 +32,6 @@ const Skills = () => {
     </section>
   );
 };
+
 
 export default Skills;

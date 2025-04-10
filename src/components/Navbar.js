@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react"; // Importa Iconify
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Estado para manejar el menú
@@ -41,16 +40,16 @@ const Navbar = () => {
               <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}>Contacto</Link>
             </li>
           </ul>
-
-          {/* Enlace a GitHub alineado a la derecha */}
-          <a 
-            href="https://github.com/MatiasRodriguez21" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="nav-link"
-          >
-            <Icon icon="skill-icons:github-dark" className="github-icon" />
-          </a>
+          
+          {/* Iconos de redes sociales */}
+          <div className="social-links ms-auto d-flex align-items-center">
+            <a href="https://www.linkedin.com/in/matirodriguez23/" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/MatiasRodriguez21" target="_blank" rel="noopener noreferrer" className="social-icon github">
+              <i className="fab fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
     </nav>

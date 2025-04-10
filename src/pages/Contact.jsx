@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../index.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -32,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="container my-5">
+    <section id="contact" className="container my-5 fade-in">
       <h2 className="text-center">Contacto</h2>
       <div className="contenedor-contact">
         {submitted ? (
@@ -44,17 +45,17 @@ const Contact = () => {
             {error && <div className="alert alert-danger">{error}</div>} {/* Mostrar error si existe */}
             <div className="mb-3">
               <label htmlFor="name" className="form-label">Nombre</label>
-              <input type="text" name="name" id="name" className="form-control" required onChange={handleChange} />
+              <input type="text" name="name" id="name" className="form-control scale-on-hover" required onChange={handleChange} />
             </div>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">Correo Electrónico</label>
-              <input type="email" name="email" id="email" className="form-control" required onChange={handleChange} />
+              <input type="email" name="email" id="email" className="form-control scale-on-hover" required onChange={handleChange} />
             </div>
             <div className="mb-3">
               <label htmlFor="message" className="form-label">Mensaje</label>
-              <textarea name="message" id="message" className="form-control" rows="4" required onChange={handleChange}></textarea>
+              <textarea name="message" id="message" className="form-control scale-on-hover" rows="4" required onChange={handleChange}></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Enviar</button>
+            <button type="submit" className="project-link">Enviar</button>
           </form>
         )}
         <p className="text-center mt-3">
@@ -65,5 +66,6 @@ const Contact = () => {
     </section>
   );
 };
+
 
 export default Contact;

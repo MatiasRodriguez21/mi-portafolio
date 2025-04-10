@@ -1,66 +1,109 @@
 /* Definición de variables CSS */
 :root {
-  --dark-slate-gray: #384d48ff;
-  --dim-gray: #6e7271ff;
-  --sage: #acad94ff;
-  --timberwolf: #d8d4d5ff;
-  --platinum: #e2e2e2ff;
+  --primary-dark: #2c3e50;
+  --secondary-dark: #555;
+  --primary-blue: #3498db;
+  --secondary-blue: #2980b9;
+  --light-gray: #f9f9f9;
+  --lighter-gray: #f5f5f5;
+  --white: #ffffff;
 }
 
 /* Estilos generales */
 body {
-  background-color: var(--platinum); /* Color de fondo más claro */
-  color: var(--dark-slate-gray); /* Color de texto más oscuro */
+  background-color: var(--lighter-gray);
+  color: var(--primary-dark);
 }
 
+
+
 body h2 {
-  margin-bottom: 20px; /* Espaciado inferior para encabezados */
-  color: var(--dark-slate-gray); /* Color de encabezados */
+  margin-bottom: 20px;
+  color: var(--primary-dark);
 }
 
 /* Estilos para la barra de navegación */
 body .custom-navbar {
-  background-color: var(--dark-slate-gray); /* Color de fondo de la barra de navegación */
-  justify-content: space-between; /* Alinea los elementos a los extremos */
-  align-items: center; /* Centra verticalmente */
+  background-color: var(--primary-dark);
+  justify-content: space-between;
+  align-items: center;
 }
 
 body .custom-title {
-  color: var(--platinum); /* Color del título */
-  font-weight: bold; /* Texto más grueso */
+  color: var(--white);
+  font-weight: bold;
 }
 
 body .navbar .nav-link {
-  color: var(--platinum); /* Color de los enlaces */
-  display: flex; /* Asegura que el ícono esté centrado */
-  align-items: center; /* Centra verticalmente el ícono */
+  color: var(--white);
+  display: flex;
+  align-items: center;
 }
 
 body .navbar .nav-link:hover {
-  color: var(--sage); /* Color de los enlaces al pasar el mouse */
+  color: var(--primary-blue);
 }
 
 body .navbar-nav {
   margin-right: auto; /* Empuja los elementos de navegación a la izquierda */
 }
 
-/* Estilos para el logo de GitHub */
-body .github-icon {
-  width: 40px; /* Ajusta el tamaño del ícono según sea necesario */
-  height: 40px; /* Ajusta el tamaño del ícono según sea necesario */
+/* Estilos para iconos sociales */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+  padding-right: 20px;
 }
 
-/* Efecto hover opcional para el ícono de GitHub */
-body .github-icon:hover {
-  background-color: #e2e6ea; /* Cambia el color de fondo al pasar el mouse */
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.social-icon.linkedin {
+  background: #0A66C2;
+}
+
+.social-icon.github {
+  background: #333;
+}
+
+.social-icon:hover {
+  opacity: 0.9;
+}
+
+/* Asegurar visibilidad en móvil */
+@media (max-width: 992px) {
+  .social-links {
+    padding: 10px 0;
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
 }
 
 /* Estilos para tarjetas */
 body .card, body .skill-card {
-  border: none; /* Sin borde en las tarjetas */
-  background-color: var(--timberwolf); /* Color de fondo de las tarjetas */
-  transition: transform 0.2s; /* Efecto de hover */
+  border: none;
+  background-color: var(--light-gray);
+  transition: transform 0.2s;
 }
+
+
 
 body .card:hover, body .skill-card:hover {
   transform: scale(1.05); /* Aumentar tamaño al pasar el mouse */
@@ -78,19 +121,46 @@ body .skill-card {
 
 /* Estilos para botones */
 body .button {
-  background-color: var(--sage); /* Color de botón primario */
-  border: none; /* Sin borde */
-  color: #384d48ff; /* Color del texto del botón */
+  background-color: var(--primary-blue);
+  border: none;
+  color: var(--white);
 }
 
 body .btn-primary {
-  background-color: var(--sage); /* Color de botón primario */
-  border: none; /* Sin borde */
-  color: #384d48ff; /* Color del texto del botón */
+  background-color: var(--primary-blue);
+  border: none;
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 body .btn-primary:hover {
-  background-color: var(--dim-gray); /* Color más oscuro al pasar el mouse */
+  background-color: var(--secondary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+body .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+body .btn-primary:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* Estilos para íconos de tecnología */
@@ -120,8 +190,533 @@ body .skill-icon {
 }
 
 
-.contenedor-contact{
-   background-color:var(--timberwolf);
-   padding:20px ;
-  border-radius: "8px";
+.contenedor-contact {
+  background-color: var(--light-gray);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Nuevo diseño para la página de inicio */
+.home-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.profile-content {
+  max-width: 600px;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.profile-text {
+  line-height: 1.8;
+  color: var(--secondary-dark);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.profile-title {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 2rem; /* Aumenté el margen inferior */
+  position: relative;
+  padding-bottom: 1rem; /* Espacio adicional */
+}
+
+.profile-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-blue);
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.content-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.home-title {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.home-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-blue);
+}
+
+.home-text {
+  line-height: 1.8;
+  color: var(--secondary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: nowrap; /* Asegura que los botones permanezcan en una sola línea */
+}
+
+.home-btn,
+.home-btn:hover,
+.home-btn:active,
+.home-btn:focus {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.home-btn:hover {
+  background: var(--secondary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Estilos de ProjectDetail */
+.project-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.project-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-gallery {
+  order: -1; /* Mueve la galería al principio */
+  margin-bottom: 2rem;
+}
+
+.project-info {
+  margin-top: 0;
+}
+
+.project-info, .project-gallery {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-info {
+  gap: 2rem;
+  min-height: calc(100% - 4rem);
+}
+
+.project-gallery {
+  gap: 1.5rem;
+  min-height: calc(100% - 3rem);
+}
+
+.image-grid {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #3498db;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.tech-item {
+  background: #e8f4fc;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  color: #2980b9;
+}
+
+.project-purpose {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.features-list {
+  margin-top: 1.5rem;
+}
+
+.features-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+}
+
+.feature-item {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.feature-item strong {
+  color: #2980b9;
+}
+
+.project-gallery {
+  animation: slideUp 0.6s ease-out;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  padding: 1rem;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.project-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.1);
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #d8d4d5ff;
+  margin-bottom: 2rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+.project-card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.project-card-description {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-link,
+.project-link:hover,
+.project-link:active,
+.project-link:focus {
+  display: inline-block;
+  text-decoration: none !important;
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.project-link:hover {
+  background: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Estilos de Contacto mejorados */
+.contenedor-contact {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 3rem auto;
+  border: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.8rem;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #f0f2f5; /* Cambiado a un tono ligeramente más oscuro */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: #fff;
+  outline: none;
+}
+
+textarea.form-control {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.project-link {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.link-primary {
+  color: var(--primary-blue);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.link-primary:hover {
+  color: var(--secondary-blue);
+  text-decoration: underline;
 }

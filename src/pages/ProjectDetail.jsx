@@ -1,41 +1,102 @@
 // src/pages/ProjectDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import '../index.css';
 
 const ProjectDetail = () => {
-  const { id } = useParams(); // Captura el ID del proyecto desde la URL
+  const { id } = useParams();
   
-  // Definición de los detalles de los proyectos
   const projectDetails = {
-    "lista-de-tareas": {
-      description: "Este es un proyecto de lista de tareas donde puedes agregar, eliminar y marcar tareas como completadas.",
-      images: ["/images/lista-de-tareas-1.jpg", "/images/lista-de-tareas-2.jpg"], // Asegúrate de que estas imágenes existan
-      purpose: "Este proyecto sirve para gestionar tareas de manera eficiente.",
+    "lista-tareas": {
+      title: "Lista de Tareas",
+      description: "Aplicación para gestión eficiente de tareas con persistencia de datos.",
+      technologies: ["HTML5", "CSS3", "JavaScript"],
+      images: [
+        "/images/lista-tareas.png",
+        "/images/lista-tareas-oscuro.png"
+      ],
+      purpose: "Aplicación de lista de tareas que permite a los usuarios agregar, eliminar y gestionar sus tareas diarias de manera eficiente.",
+      features: [
+        "**Agregar Tareas**: Permite a los usuarios agregar nuevas tareas a la lista.",
+        "**Eliminar Tareas**: Los usuarios pueden eliminar tareas completadas o no deseadas.",
+        "**Modo Nocturno**: Cambia la apariencia de la aplicación para facilitar su uso en entornos oscuros.",
+        "**Interfaz Intuitiva**: Diseño simple y fácil de usar para una mejor experiencia del usuario."
+      ]
     },
-    // Puedes agregar más proyectos aquí
     "otro-proyecto": {
-      description: "Descripción de otro proyecto.",
+      title: "Otro Proyecto",
+      description: "Descripción detallada del proyecto y sus funcionalidades.",
+      technologies: ["React", "Node.js", "MongoDB"],
       images: ["/images/otro-proyecto-1.jpg"],
-      purpose: "Propósito de otro proyecto.",
+      purpose: "Mostrar capacidades full-stack con tecnologías modernas.",
+    },
+    "otro-proyecto": {
+      title: "Otro Proyecto",
+      description: "Descripción detallada del proyecto y sus funcionalidades.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      images: ["/images/otro-proyecto-1.jpg"],
+      purpose: "Mostrar capacidades full-stack con tecnologías modernas.",
+    },
+    "otro-proyecto": {
+      title: "Otro Proyecto",
+      description: "Descripción detallada del proyecto y sus funcionalidades.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      images: ["/images/otro-proyecto-1.jpg"],
+      purpose: "Mostrar capacidades full-stack con tecnologías modernas.",
     },
   };
 
-  // Obtiene los detalles del proyecto basado en el ID
   const project = projectDetails[id] || {};
 
   return (
-    <div className="project-detail">
-      <h2>{id}</h2>
-      <p>{project.description}</p>
-      <h3>Propósito</h3>
-      <p>{project.purpose}</p>
-      <h3>Imágenes</h3>
-      <div className="image-gallery">
-        {project.images && project.images.map((image, index) => (
-          <img key={index} src={image} alt={`Imagen del proyecto ${id}`} />
-        ))}
-      </div>
-    </div>
+    <main className="project-detail-container">
+      <section className="project-header">
+        <h1 className="project-title">{project.title || id}</h1>
+        <p className="project-description">{project.description}</p>
+      </section>
+
+      <section className="project-content">
+        <div className="project-info">
+          <h2 className="section-title">Tecnologías utilizadas</h2>
+          <ul className="tech-list">
+            {project.technologies && project.technologies.map((tech, index) => (
+              <li key={index} className="tech-item">{tech}</li>
+            ))}
+          </ul>
+          
+          <h2 className="section-title">Propósito y Características</h2>
+          <p className="project-purpose">{project.purpose}</p>
+          
+          {project.features && (
+            <div className="features-list">
+              <h3 className="features-title">Características principales:</h3>
+              <ul>
+                {project.features.map((feature, index) => (
+                  <li key={index} className="feature-item" dangerouslySetInnerHTML={{__html: feature}} />
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <div className="project-gallery">
+          <h2 className="section-title">Galería</h2>
+          <div className="image-grid">
+            {project.images && project.images.map((image, index) => (
+              <div key={index} className="image-container">
+                <img 
+                  src={image} 
+                  alt={`Imagen del proyecto ${id}`} 
+                  className="project-image"
+                  loading="lazy"
+                  onClick={() => window.open(image, '_blank')}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 
