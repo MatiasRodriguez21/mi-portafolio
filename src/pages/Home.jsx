@@ -25,7 +25,7 @@ const Home = () => {
           <div className="home-links">
             <Link to="/projects" className="project-link">Ver Proyectos</Link>
             <Link to="/contact" className="project-link">Contáctame</Link>
-            <a href="/Rodriguez-Matias.pdf" download className="project-link">Descargar CV</a>
+            <a href="/Rodriguez Matias.pdf" download className="project-link">Descargar CV</a>
           </div>
         </div>
       </div>
