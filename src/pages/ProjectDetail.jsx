@@ -23,12 +23,18 @@ const ProjectDetail = () => {
         "**Interfaz Intuitiva**: Diseño simple y fácil de usar para una mejor experiencia del usuario."
       ]
     },
-    "otro-proyecto": {
-      title: "Otro Proyecto",
-      description: "Descripción detallada del proyecto y sus funcionalidades.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      images: ["/images/otro-proyecto-1.jpg"],
-      purpose: "Mostrar capacidades full-stack con tecnologías modernas.",
+    "inmobiliaria-app": {
+      title: "Proyecto Inmobiliaria",
+      description: "Aplicación inmobiliaria para gestión de propiedades.",
+      technologies: ["React", "Node.js", "Tailwind CSS"],
+      images: ["/images/home-inmobiliaria.png",
+        "/images/propiedades.png",
+        "/images/detalles-prop1.png",
+        "/images/detalles-prop2.png",
+        
+        
+      ],
+      purpose:  "Aplicación web desarrollada con React para la gestión de propiedades inmobiliarias. Permite a los usuarios explorar propiedades, ver detalles específicos y contactar con los vendedores de manera eficiente.Cuenta con un diseño moderno y responsivo, optimizado para dispositivos móviles y de escritorio."
     },
     "otro-proyecto": {
       title: "Otro Proyecto",

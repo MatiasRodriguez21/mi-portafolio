@@ -13,9 +13,9 @@ const Projects = () => {
       description: "Aplicación para gestión eficiente de tareas con persistencia de datos.",
       technologies: ["HTML5", "CSS3", "JavaScript"],
     },
-    "nombre-del-repo-2": {
-      description: "Descripción detallada del proyecto y sus funcionalidades.",
-      technologies: ["React", "Node.js"],
+    "inmobiliaria-app": {
+      description: "Aplicación inmobiliaria para gestión de propiedades.",
+      technologies: ["React","javascript", "Node.js", "Talwind CSS"],
     },
   };
 
